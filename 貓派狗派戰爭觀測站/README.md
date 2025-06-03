@@ -54,9 +54,9 @@
 
 * **Google Trends**
 
-  * 搜尋熱度（Search）
-  * YouTube 熱度（可擴充）
-* 關鍵字由熱門搜尋建議彙整（如 Google Autocomplete）
+  * Google 搜尋熱度
+  * YouTube 熱度
+* 關鍵字由熱門搜尋建議彙整（如 Instagram）
 
 ---
 
