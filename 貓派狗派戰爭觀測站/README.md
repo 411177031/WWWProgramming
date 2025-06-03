@@ -50,6 +50,7 @@
 ├── style.css                # 首頁樣式
 ├── vote.php                 # 處理投票資料（後端）
 ├── get_votes.php            # 提供目前票數資料（後端）
+├── catdog_user.sql          # 儲存票數資料（資料庫）
 │
 ├── map.html                 # 全球熱度地圖頁面
 ├── map.js                   # 地圖互動邏輯
