@@ -7,6 +7,61 @@
 除了資料視覺化外，也加入**投票互動功能**，讓使用者能在趣味中表達立場、探索資料。
 
 ---
+當然可以！以下是你可以直接貼進 `README.md` 裡的 **三個段落**（含 Markdown 標記），格式一致，語氣正式清晰，非常適合放在專案中後段。
+
+---
+
+##  本地端執行方式（推薦）
+
+1. 將整個專案資料夾下載或 clone 至本地端。
+2. 安裝並啟動 [XAMPP](https://www.apachefriends.org/index.html) 或其他支援 PHP 的本地伺服器工具。
+3. 將專案資料夾放入 `htdocs` 資料夾中。
+5. 在瀏覽器開啟以下網址：
+
+   ```
+   http://localhost/你的資料夾名稱/index.html
+   ```
+6. 即可進入首頁，瀏覽互動式資料視覺化內容。
+
+---
+
+##  各頁面入口
+
+| 功能         | 檔案名稱             | 說明                    |
+| ---------- | ---------------- | --------------------- |
+|  首頁      | `index.html`     | 包含貓狗投票、圖表切換介面         |
+|  全球熱度地圖  | `map.html`       | 使用 Flourish iframe 呈現 |
+|  熱度趨勢折線圖 | `trend.html`     | 使用 Flourish iframe 呈現搜尋趨勢    |
+|  關鍵字文字雲  | `wordcloud.html` | 呈現關鍵字分析   |
+
+---
+
+##  專案檔案架構
+
+```
+ 專案根目錄
+├── index.html               # 首頁（投票介面與圖表切換）
+├── script.js                # 首頁互動邏輯（投票與切換功能）
+├── style.css                # 首頁樣式
+├── vote.php                 # 處理投票資料（後端）
+├── get_votes.php            # 提供目前票數資料（後端）
+│
+├── map.html                 # 全球熱度地圖頁面
+├── map.js                   # 地圖互動邏輯
+├── map.css                  # 地圖頁面樣式
+│
+├── trend.html               # 時間趨勢折線圖頁面
+├── trend.js                 # 趨勢圖互動邏輯
+├── trend.css                # 趨勢圖樣式
+│
+├── wordcloud.html           # 關鍵字文字雲頁面
+├── wordcloud.js             # 文字雲互動邏輯
+├── wordcloud.css            # 文字雲樣式
+│
+└── 期末專案.pdf             # 系統介紹與簡報內容
+```
+
+---
 
 ## 專案需求與功能
 
@@ -72,5 +127,4 @@
 
 ##  Demo 與展示
 
-影片 Demo 與系統截圖請見：[期末簡報 PDF](./期末專案.pdf)
-GitHub 原始碼網址：[點我前往](https://github.com/411177031/WWWProgramming)
+影片 Demo 與系統截圖請見：[點我前往](https://www.canva.com/design/DAGmxE2G1qY/bqAA8mcT-gMmMCZSmYy-eA/edit?utm_content=DAGmxE2G1qY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton))
