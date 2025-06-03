@@ -53,9 +53,7 @@
 │
 ├── wordcloud.html           # 關鍵字文字雲頁面
 ├── wordcloud.js             # 文字雲互動邏輯
-├── wordcloud.css            # 文字雲樣式
-│
-└── 期末專案.pdf             # 系統介紹與簡報內容
+└── wordcloud.css            # 文字雲樣式
 ```
 
 ---
