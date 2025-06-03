@@ -11,14 +11,22 @@
 ##  本地端執行方式（推薦）
 
 1. 將整個專案資料夾下載或 clone 至本地端。
-2. 安裝並啟動 [XAMPP](https://www.apachefriends.org/index.html) 或其他支援 PHP 的本地伺服器工具。
-3. 將專案資料夾放入 `htdocs` 資料夾中。
-5. 在瀏覽器開啟以下網址：
-
+2. 安裝並啟動 [XAMPP](https://www.apachefriends.org/index.html)，啟動 Apache 和 MySQL。 
+3. 匯入提供的 catdog_user.sql：
+   * 點左側「新增資料庫」→ 名稱輸入 catdog_user → 建立
+   * 點選 catdog_user 資料庫 → 點「匯入」→ 上傳 .sql 檔 → 執行
+4. 點 phpMyAdmin 上方「SQL」，貼上以下語法建立帳號：
+   ```
+   CREATE USER 'catdog_user'@'localhost' IDENTIFIED BY 'catdogcatdog';
+   GRANT ALL PRIVILEGES ON catdog_user.* TO 'catdog_user'@'localhost';
+   FLUSH PRIVILEGES;
+   ```
+5. 將專案資料夾放入 `htdocs` 資料夾中。
+6. 在瀏覽器開啟以下網址：
    ```
    http://localhost/PawWar/index.html
    ```
-6. 即可進入首頁，瀏覽互動式資料視覺化內容。
+7. 即可進入首頁，瀏覽互動式資料視覺化內容。
 
 ---
 
@@ -37,7 +45,7 @@
 
 ```
 📁 專案根目錄
-├── index.html               # 首頁（投票介面與圖表切換）
+├── ./index.html               # 首頁（投票介面與圖表切換）
 ├── script.js                # 首頁互動邏輯（投票與切換功能）
 ├── style.css                # 首頁樣式
 ├── vote.php                 # 處理投票資料（後端）
