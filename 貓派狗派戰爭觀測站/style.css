@@ -1,72 +1,166 @@
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fefefe;
-    color: #333;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  font-family: 'Noto Sans TC', sans-serif;
+  background: linear-gradient(to right, #004aad, #8e060e); /* 藍紅漸變背景 */
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.battle-arena {
+  position: relative; /* 為了讓絕對定位的閃電能對齊這區 */
+  padding: 2em 1em;
+}
+
+.sides {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  padding: 1em;
+  gap: 1em;
+}
+
+.cat-side, .dog-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-img {
+  width: 70%;
+  height: auto;
+  opacity: 0.75;
+  transform: scaleX(-1); /* 左右翻轉貓狗圖片 */
+}
+
+.lightning {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* 正中央置中 */
+  z-index: -1; /* 確保蓋在圖片上層 */
+  pointer-events: none; /* 點不到閃電（不擋點擊） */
+}
+
+.lightning img {
+  height: 600px; /* 想多大放多大 */
+  opacity: 0.9;
+}
+
+button {
+  margin-top: 0.5em;
+  padding: 1em 2em;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.cat-side button {
+  width: 100%;
+  padding: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #f093fb, #5c6ac4);
+  border: none;
+  transform: skew(-20deg);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+.cat-side button:hover {
+  background: linear-gradient(135deg, #7873f5,#ff6ec4);
+}
+
+.cat-side button:active {
+  transform: skew(-20deg) scale(0.97);
+}
+
+/* 修正文字傾斜 */
+.cat-side button span {
+  display: inline-block;
+  transform: skew(20deg);
+}
+
+.dog-side button {
+  width: 100%;
+  padding: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #2f80ed, #56ccf2);
+  border: none;
+  transform: skew(-20deg);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+.dog-side button:hover {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+}
+
+.dog-side button:active {
+  transform: skew(-20deg) scale(0.97);
+}
+
+.dog-side button span {
+  display: inline-block;
+  transform: skew(20deg);
+}
+
+.footer-info {
+  display: flex;
+  font-size: 1.2em;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* 小螢幕自動換行 */
+  padding: 1em;
+}
+
+#voteResult {
+  margin: 0;
+  font-size: 1.2em;
+  white-space: nowrap;
+}
+
+.chart-nav {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+
+.chart-nav {
+  font-size: 0;
+}
+
+.footer-info .chart-nav a {
+  font-size: 1.4rem; /* 直接相對根，獨立於 .chart-nav */
+  color: white;
+  text-decoration: none;
+}
+
+.footer-info .chart-nav a:hover {
+  color: #aaa;
+}
+
+@media (max-width: 600px) {
+  .footer-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
   }
-  /* 圖片樣式 */
-  img {
-    width: 400px;  /* 限制圖片寬度 */
-    height: 300px; /* 限制圖片高度 */
-    object-fit: cover; /* 裁剪圖片，使其填滿範圍 */
-    border-radius: 10px; /* 圓角 */
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* 陰影 */
-    transition: transform 0.3s ease-in-out;
-  }
-  header {
-    background-color: #afafaf;
-    padding: 1rem 1rem;
-  }
-  
-  .vote-section {
-    margin: 2rem;
-  }
-  
-  .vote-section button {
-    font-size: 1.2rem;
-    margin: 0 1rem;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: #939393;
-    color: white;
-  }
-  
-  .vote-section button:hover {
-    background-color: #a3dce4;
-  }
-  
-  .chart-nav {
-    margin: 2rem 0;
-  }
-  
-  .chart-nav button {
-    padding: 0.5rem 1rem;
-    margin: 0 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background-color: #f0f0f0;
-    cursor: pointer;
-  }
-  
-  .chart-nav button:hover {
-    background-color: #ddd;
-  }
-  
-  .chart-section {
-    margin: 2rem auto;
-    max-width: 800px;
-  }
-  
-  footer {
-    background-color: #f8f8f8;
-    padding: 1rem;
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 2rem;
-  }
-  
+}

@@ -4,43 +4,34 @@
   <meta charset="UTF-8">
   <title>你是哪一派？貓派狗派戰爭觀測站</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <header>
-    <h1>你是哪一派？貓派狗派戰爭觀測站</h1>
-  </header>
+  <section class="battle-arena">
+    <div class="sides">
+      <div class="cat-side">
+        <img src="picture/cat.png" class="side-img" alt="貓派代表">
+        <button id="catButton" onclick="vote('cat')"><span>我挺貓派 0%</span></button>
+      </div>
 
-  <img src="CatVSDogs_1.png">
-  <p>你是哪一派？來投票吧！</p>
-  <section class="vote-section">
-    <button onclick="vote('cat')">我挺貓派 🐱</button>
-    <button onclick="vote('dog')">我挺狗派 🐶</button>
-    <p id="voteResult">目前結果：🐱 0% vs. 🐶 0%（總票數：0）</p>
+      <div class="lightning">
+        <img src="picture/lightning.gif" alt="閃電動畫">
+      </div>
+
+      <div class="dog-side">
+        <img src="picture/dog.png" class="side-img" alt="狗派代表">
+        <button id="dogButton" onclick="vote('dog')"><span>我挺狗派 0%</span></button>
+      </div>
+    </div>
+
+    <div class="footer-info">
+      <p id="voteResult">總票數：0</p>
+      <nav class="chart-nav">
+        <a href="map.html">｜熱度地圖｜</a>
+        <a href="trend.html">趨勢熱圖｜</a>
+        <a href="wordcloud.html">文字雲圖｜</a>
+      </nav>
+    </div>
   </section>
-
-  <nav class="chart-nav">
-    <button onclick="showChart('trendChartSection')">熱度趨勢圖</button>
-    <button onclick="showChart('mapChartSection')">全球熱度地圖</button>
-    <button onclick="showChart('wordCloudSection')">關鍵字文字雲</button>
-  </nav>
-
-  <section id="trendChartSection" class="chart-section">
-    <canvas id="trendChart" width="600" height="400"></canvas>
-    <p>（折線圖展示板 之後會改為 Flourish 圖表）</p>
-  </section>
-
-  <section id="mapChartSection" class="chart-section" style="display:none;">
-    <p>（Flourish 地圖圖表嵌入區）</p>
-  </section>
-
-  <section id="wordCloudSection" class="chart-section" style="display:none;">
-    <p>（Flourish 關鍵字文字雲嵌入區）</p>
-  </section>
-
-  <footer>
-    <p>資料來源：Google Trends | 製作：你的小組名</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>

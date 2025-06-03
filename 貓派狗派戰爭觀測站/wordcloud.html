@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>貓派狗派文字雲</title>
+  <link rel="stylesheet" href="wordcloud.css">
+</head>
+<body>
+  <header>
+    <div class="menu">
+      <button id="menuButton">☰</button>
+      <ul id="menuList" style="display: none;">
+        <li><a href="map.html">熱度地圖</a></li>
+        <li><a href="trend.html">趨勢熱圖</a></li>
+        <li><a href="wordcloud.html">文字雲圖</a></li>
+      </ul>
+    </div>
+    <h1>貓派 vs 狗派：文字雲</h1>
+  </header>
+
+  <section class="section">
+    <p>space</p>
+    <div id="chartContainer">
+      <!-- word cloud will be injected here -->
+    </div>
+
+    <footer>
+      <div class="footer-bar">
+        <div class="footer-left">
+          資料來源：Google Trends, Instagram
+        </div>
+        <div class="footer-center">
+          <a href="index.html">← 回首頁</a>
+        </div>
+        <div class="footer-right control">
+          <select id="platformSelect" onchange="updateChart()">
+            <option value="trends">Google Trends</option>
+            <option value="instagram">Instagram</option>
+          </select>
+
+          <select id="regionSelect" onchange="updateChart()">
+            <option value="cat">cat</option>
+            <option value="dog">dog</option>
+          </select>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <script src="wordcloud.js"></script>
+</body>
+</html>
