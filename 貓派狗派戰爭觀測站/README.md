@@ -16,7 +16,7 @@
 5. 在瀏覽器開啟以下網址：
 
    ```
-   http://localhost/你的資料夾名稱/index.html
+   http://localhost/PawWar/index.html
    ```
 6. 即可進入首頁，瀏覽互動式資料視覺化內容。
 
