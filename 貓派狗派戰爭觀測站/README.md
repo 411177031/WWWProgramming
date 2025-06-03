@@ -44,24 +44,23 @@
 ##  專案檔案架構
 
 ```
-📁 專案根目錄
-├── ./index.html               # 首頁（投票介面與圖表切換）
-├── script.js                # 首頁互動邏輯（投票與切換功能）
-├── style.css                # 首頁樣式
-├── vote.php                 # 處理投票資料（後端）
-├── get_votes.php            # 提供目前票數資料（後端）
+├── index.html # 首頁（投票介面與圖表切換）
+├── script.js # 首頁互動邏輯（投票與切換功能）
+├── style.css # 首頁樣式
+├── vote.php # 處理投票資料（後端）
+├── get_votes.php # 提供目前票數資料（後端）
 │
-├── map.html                 # 全球熱度地圖頁面
-├── map.js                   # 地圖互動邏輯
-├── map.css                  # 地圖頁面樣式
+├── map.html # 全球熱度地圖頁面
+├── map.js # 地圖互動邏輯
+├── map.css # 地圖頁面樣式
 │
-├── trend.html               # 時間趨勢折線圖頁面
-├── trend.js                 # 趨勢圖互動邏輯
-├── trend.css                # 趨勢圖樣式
+├── trend.html # 時間趨勢折線圖頁面
+├── trend.js # 趨勢圖互動邏輯
+├── trend.css # 趨勢圖樣式
 │
-├── wordcloud.html           # 關鍵字文字雲頁面
-├── wordcloud.js             # 文字雲互動邏輯
-└── wordcloud.css            # 文字雲樣式
+├── wordcloud.html # 關鍵字文字雲頁面
+├── wordcloud.js # 文字雲互動邏輯
+└── wordcloud.css # 文字雲樣式
 ```
 
 ---
